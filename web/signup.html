@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarvis - Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="auth-container">
+        <h1 class="auth-title">Create Jarvis Account</h1>
+        <form id="signup-form">
+            <input type="text" id="signup-name" class="auth-input" placeholder="Full Name" required>
+            <input type="email" id="signup-email" class="auth-input" placeholder="Email" required>
+            <input type="password" id="signup-password" class="auth-input" placeholder="Password" required>
+            <button type="submit" class="auth-button">Sign Up</button>
+        </form>
+        <p class="redirect-link">Already have an account? <a href="login.html">Login</a></p>
+        
+        <!-- This paragraph will show success or error messages from the backend -->
+        <p id="message" class=""></p>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script type="text/javascript" src="/eel.js"></script>
+    <script type="text/javascript" src="auth.js"></script>
+</body>
+</html>

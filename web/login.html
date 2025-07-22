@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 
+        IMPORTANT: You MUST replace the placeholder below with your own Google Client ID.
+        Get it from the Google Cloud Console: https://console.cloud.google.com/apis/credentials
+    -->
+    <meta name="google-signin-client_id" content="619764830833-s8hfep13lj1b2nhfnh7p8ucehmqpicms.apps.googleusercontent.com">
+    <title>Jarvis - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="auth-container">
+        <h1 class="auth-title">Login to J.A.R.V.I.S</h1>
+        <form id="login-form">
+            <input type="email" id="login-email" class="auth-input" placeholder="Email" required>
+            <input type="password" id="login-password" class="auth-input" placeholder="Password" required>
+            <button type="submit" class="auth-button">Login</button>
+        </form>
+        <p class="or-divider">Or</p>
+        
+        <!-- Google Sign-In Button Container -->
+        <div id="g_id_onload" 
+             data-client_id="619764830833-s8hfep13lj1b2nhfnh7p8ucehmqpicms.apps.googleusercontent.com" 
+             data-callback="onGoogleSignIn">
+        </div>
+        <div class="g_id_signin" 
+             data-type="standard" 
+             data-theme="outline" 
+             data-text="sign_in_with" 
+             data-shape="rectangular" 
+             data-logo_alignment="left">
+        </div>
+        
+        <p class="redirect-link">Don't have an account? <a href="signup.html">Sign Up</a></p>
+        <p id="error-message" class="error" style="display:none;"></p>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script type="text/javascript" src="/eel.js"></script>
+    <script type="text/javascript" src="auth.js"></script>
+</body>
+</html>

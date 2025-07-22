@@ -1,0 +1,166 @@
+/* --- General & Auth Styles --- */
+body {
+    background-color: rgb(0, 0, 0);
+    overflow: hidden;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: #eee;
+}
+
+.auth-container {
+    background-color: #111111e0;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 170, 255, 0.6);
+    border: 1px solid #00aaff;
+    width: 400px;
+    text-align: center;
+    color: #00aaff;
+}
+
+.auth-title {
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+.auth-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    margin-bottom: 20px;
+    background-color: #222;
+    border: 1px solid #00aaff;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+}
+
+.auth-input:focus {
+    outline: none;
+    box-shadow: 0 0 10px #00aaff;
+}
+
+.auth-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #00aaff;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.auth-button:hover {
+    background-color: #33bbff;
+    box-shadow: 0 0 15px #00aaff;
+}
+
+.or-divider {
+    margin: 20px 0;
+    color: #555;
+}
+
+.g_id_signin {
+    margin: 0 auto; /* Center the Google button */
+}
+
+.redirect-link {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.redirect-link a {
+    color: #33bbff;
+    text-decoration: none;
+}
+
+.error, .success {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: block; /* Make sure it's visible */
+}
+
+.error { color: #ff4d4d; background-color: #3d1a1a; }
+.success { color: #4dff88; background-color: #1a3d24; }
+
+
+/* --- Main JARVIS UI Styles --- */
+.square {
+    position: relative; width: 400px; height: 400px;
+    display: flex; justify-content: center; align-items: center;
+}
+.square span {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-image: radial-gradient(circle, rgba(171, 114, 255, 0) 50%, rgba(0, 13, 255, 0.23) 40%);
+    box-shadow: 0 0 50px rgb(25, 0, 255);
+    border-radius: 38% 62% 63% 37% / 41% 44%;
+    transition: 0.5s;
+    animation: animate1 6s linear infinite;
+}
+.square span:nth-child(2) { animation-duration: 4s; }
+.square span:nth-child(3) { animation-duration: 8s; }
+
+@keyframes animate1 {
+    0% { transform: rotate(0deg); border-radius: 38% 62% 63% 37% / 41% 44%; }
+    50% { transform: rotate(180deg); border-radius: 50% 50% 60% 40% / 50% 40%; }
+    100% { transform: rotate(360deg); border-radius: 38% 62% 63% 37% / 41% 44%; }
+}
+
+#TextInput {
+    background-color: #181818a8; border-color: blue;
+    box-shadow: 0 0 20px rgb(25, 0, 255), inset 0 0 0px rgb(25, 0, 255);
+    border-radius: 8px; color: white; padding: 3px 0px 3px 20px; margin: 0px 20%;
+}
+.input-field {
+    background-color: transparent; border: none; width: 95%;
+    outline: none; color: white; font-family: cursive;
+}
+.glow-on-hover {
+    width: 35px; height: 35px; border: none; outline: none;
+    color: #fff; background: #111; cursor: pointer;
+    position: relative; z-index: 0; border-radius: 10px; padding: 0px; margin-left: 10px;
+}
+.glow-on-hover:before {
+    content: ''; background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute; top: -2px; left: -2px; background-size: 400%;
+    z-index: -1; filter: blur(5px); width: calc(100% + 4px); height: calc(100% + 4px);
+    animation: glowing 20s linear infinite; opacity: 0;
+    transition: opacity .3s ease-in-out; border-radius: 10px;
+}
+.glow-on-hover:hover:before { opacity: 1; }
+.glow-on-hover:after {
+    z-index: -1; content: ''; position: absolute;
+    width: 100%; height: 100%; background: #111;
+    left: 0; top: 0; border-radius: 10px;
+}
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+.sender_message {
+    background-color: #007bff; color: white; padding: 8px 14px;
+    border-radius: 18px 18px 5px 18px; max-width: 85%;
+    display: inline-block; text-align: left;
+    word-wrap: break-word;
+}
+.receiver_message {
+    background-color: #28a745; color: white; padding: 8px 14px;
+    border-radius: 18px 18px 18px 5px; max-width: 85%;
+    display: inline-block; text-align: left;
+    word-wrap: break-word;
+}
+#jarvis-gif {
+    width: 300px; height: 300px; border-radius: 50%;
+    object-fit: cover; box-shadow: 0 0 35px rgba(0, 150, 255, 0.7);
+}
