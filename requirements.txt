@@ -1,0 +1,8 @@
+eel
+werkzeug
+requests
+pyjokes
+beautifulsoup4
+g4f
+Pillow
+opencv-python
