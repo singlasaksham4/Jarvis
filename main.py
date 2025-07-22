@@ -155,4 +155,4 @@ def get_response(user_input):
 if __name__ == '__main__':
     init_db()
     print("Starting Jarvis Application...")
-    eel.start('login.html', size=(1000, 700))
+   eel.start('login.html', size=(1000, 700), mode=None)
