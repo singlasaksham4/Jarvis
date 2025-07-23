@@ -149,9 +149,9 @@ def get_response(user_input):
 if __name__ == '__main__':
     init_db()
     print("Starting Jarvis Application...")
-    # --- CORRECTED EEL START ---
-    # This line should be properly indented within the if __name__ == '__main__': block
-   # --- Dynamically get port from environment or use a default ---
-port = int(os.environ.get('PORT', 8000)) # Get PORT from environment, default to 8000 if not set
-eel.start('login.html', size=(1000, 700), mode=None, port=port)
+    # --- CORRECTED EEL START for Render Deployment ---
+    # Use the PORT environment variable provided by Render, or default to 8000 locally.
+    # mode=None tells Eel not to try and open a browser automatically.
+    port = int(os.environ.get('PORT', 8000))
+    eel.start('login.html', size=(1000, 700), mode=None, port=port)
     # --- END OF CORRECTION ---
