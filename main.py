@@ -117,8 +117,6 @@ REGEX_COMMANDS = {
 @eel.expose
 def get_response(user_input):
     """Processes user commands and gets AI responses."""
-    print("--------------------")
-    print(f"[DEBUG] Received input: '{user_input}'")
     normalized_input = user_input.lower().strip()
 
     # 1. Check for REGEX commands
@@ -133,10 +131,8 @@ def get_response(user_input):
             return func()
 
     # 3. Fallback to AI, letting g4f choose the provider automatically
-    print("[DEBUG] No local command matched. Querying AI...")
+    print("No local command matched. Querying AI...")
     try:
-        # This is the simplest and most robust call.
-        # It tells the library to find ANY working provider for the default model.
         response = g4f.ChatCompletion.create(
             model=g4f.models.default,
             messages=[{"role": "user", "content": user_input}],
@@ -144,15 +140,16 @@ def get_response(user_input):
         )
         if not response:
              raise Exception("AI returned an empty or invalid response.")
-
-        print(f"[DEBUG] AI Response: '{response}'")
         return response
     except Exception as e:
-        print(f"[!! AI ERROR !!] An error occurred with g4f: {e}")
+        print(f"[AI ERROR] An error occurred with g4f: {e}")
         return "Sorry, my AI brain is currently offline. Please try again later."
 
 # --- Main Execution ---
 if __name__ == '__main__':
     init_db()
     print("Starting Jarvis Application...")
-   eel.start('login.html', size=(1000, 700), mode=None)
+    # --- CORRECTED EEL START ---
+    # This line should be properly indented within the if __name__ == '__main__': block
+    eel.start('login.html', size=(1000, 700), mode=None)
+    # --- END OF CORRECTION ---
