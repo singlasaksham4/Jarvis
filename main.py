@@ -151,5 +151,7 @@ if __name__ == '__main__':
     print("Starting Jarvis Application...")
     # --- CORRECTED EEL START ---
     # This line should be properly indented within the if __name__ == '__main__': block
-    eel.start('login.html', size=(1000, 700), mode=None)
+   # --- Dynamically get port from environment or use a default ---
+port = int(os.environ.get('PORT', 8000)) # Get PORT from environment, default to 8000 if not set
+eel.start('login.html', size=(1000, 700), mode=None, port=port)
     # --- END OF CORRECTION ---
